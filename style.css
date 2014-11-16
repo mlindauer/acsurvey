@@ -6,6 +6,7 @@ table {
     width: 80%;
     left: 10%;
     border-collapse: collapse;
+    margin-top: 30px;
 }
 td {
     padding: 3px .5em;
@@ -55,4 +56,5 @@ footer {
 	padding: 5px;
 	text-align: center;
 	bottom: 0px;
+	margin-top: 15px;
 }
