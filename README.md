@@ -15,7 +15,7 @@ Please follow the following guideline how to format new bibtex entries:
 
 * bibkeys: 
     * [lastname first author]-[conference abbrevation][year][a-d] (e.g.: hutter-aaai14a)
-    * proceedings (mainly in procs.bib): [acronym][year] (e.g. aaai09 for "Proceedings of the Conference on Artificial Intelligence (AAAI'09)")
+    * proceedings (mainly in procs.bib): [acronym][year], e.g., aaai09 for "Proceedings of the Conference on Artificial Intelligence (AAAI'09)"
 * author/editor names: only first character of the first name and last name (no additional first names) (e.g. "F. Hutter and M. Lindauer")
 * use crossrefs for all proceedings 
 * add proceedings in proc.bib 
