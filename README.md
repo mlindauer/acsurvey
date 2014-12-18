@@ -1,7 +1,7 @@
 # ACSurvey
 
 ACSurvey is small web project to list literature regarding Algorithm Configuration and related topics, such as Hyperparameter Optimization and Global Optimization.
-The website is hosted at [aclib.net/acbib/]
+The website is hosted at [aclib.net/acbib/](aclib.net/acbib/)
 
 ## Submitting new papers
 
