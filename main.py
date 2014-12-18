@@ -25,7 +25,7 @@ class BIBHTML(object):
         self.bibdata = None
         
         #self.ACTIVE_KEYS = ["Algorithm Configuration", "Algorithm Schedules", "Algorithm Selection", "Hyper-Parameter Optimization"]
-        self.ACTIVE_KEYS = ["Algorithm Configuration", "Hyper-Parameter Optimization"]
+        self.ACTIVE_KEYS = ["Algorithm Configuration", "Hyper-Parameter Optimization", "Global Optimization"]
             
     def main(self):
         self.read_bib()
