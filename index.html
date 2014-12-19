@@ -12,8 +12,8 @@
     <body>
         <a href="http://coseal.net/"><img style="position: absolute; top: 10px; right: 10px; border: 0; width: 8%" src="coseallogo.png" alt="Fork me on GitHub"></a>
 
-        <h1>Algorithm Configuration and<br/> Hyper-Parameter Optimization Literature</h1>
-        <h2>Last update 18 December 2014</h2>
+        <h1>Algorithm Configuration Literature</h1>
+        <h2>Last update 19 December 2014</h2>
         <div class="contact">Comments? Suggestions? Corrections?<br/>
         <a href="mailto:lindauer@cs.uni-freiburg.de">Let me know!</a></div>
         <div class="expl">click headings to sort<br/>click citations to
@@ -21,7 +21,7 @@
         <script type="text/javascript">
     (function() {
         var down = "↓", up = "↑", idx = 0,
-            headers = ["citation", "topic", "domain", "year"];
+            headers = ["Citation", "Category", "Domain", "Year"];
 
         function id(d) {
             return d;
@@ -58,7 +58,7 @@
 
         function compare(h, a, b) {
             var ah = null, bh = null;
-            if(h == "citation") {
+            if(h == "Citation") {
                 ah = a[h].short, bh = b[h].short;
             } else {
                 ah = a[h], bh = b[h];
@@ -68,9 +68,9 @@
 
         function citesort(f, h) {
             return function(a, b) {
-                var tmp = f * ((h == "year") ? a[h] - b[h] : compare(h, a, b));
-                if(tmp == 0 && h != "citation") {
-                    return f * compare("citation", a, b);
+                var tmp = f * ((h == "Year") ? a[h] - b[h] : compare(h, a, b));
+                if(tmp == 0 && h != "Citation") {
+                    return f * compare("Citation", a, b);
                 } else {
                     return tmp;
                 }
@@ -91,8 +91,14 @@
         table.append("tr").selectAll("th").data(headers).enter()
             .append("th")
             .attr("width", function(d) {
-                if(d == "citation") {
+                if(d == "Citation") {
                     return "30%";
+                }
+                if(d == "Category") {
+                    return "20%";
+                }
+                if(d == "Year") {
+                    return "5%";
                 }
             })
             .html(id)
@@ -111,7 +117,7 @@
                 $(this).html(h + suf);
                 table.selectAll("tr.data").sort(citesort(f, h));
                 $("tr.data").css("border-color", "#ddd");
-                if(h != "citation") {
+                if(h != "Citation") {
                     addSeparators(i);
                 }
                 $("tr.data:first").css("border-top-width", 0);
@@ -133,7 +139,7 @@
     })();
         </script>
         <footer>
-                <a href="http://www.uni-freiburg.de/impressum">Impressum</a> | <a href="mailto:lindauer@cs.uni-freiburg.de">Contact</a> | Template by <a href="https://github.com/larskotthoff/assurvey">Lars Kotthoff</a>
+                <a href="http://www.uni-freiburg.de/impressum">Impressum</a> | <a href="mailto:lindauer@cs.uni-freiburg.de">Contact</a> | <a href="https://github.com/mlindauer/acsurvey">GitHub Project</a> | Template by <a href="https://github.com/larskotthoff/assurvey">Lars Kotthoff</a>
         </footer>
     </body>
 </html>

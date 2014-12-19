@@ -151,27 +151,27 @@
     title    = {Collaborative hyperparameter tuning},
     crossref = {icml13},
     pages    = {199-207},
-  	keywords   = {Hyper-Parameter Optimization},
+  	keywords   = {Global Optimization},
   	domain    = {ML}
 }
 
 @inproceedings{bergstra-nips11a,
     author    = {J. Bergstra and R. Bardenet and Y. Bengio and B. K{\'e}gl},
-    title     = {Algorithms for Hyper-Parameter Optimization},
+    title     = {Algorithms for Global Optimization},
     pages     = {2546-2554},
     crossref  = {nips11},
-    keywords = {Hyper-Parameter Optimization},
+    keywords = {Global Optimization},
     domain   = {ML}
 }
 
 @Article{bergstra-jmlr12a,
     author = {J. Bergstra and Y. Bengio},
-    title = {Random Search for Hyper-Parameter Optimization},
+    title = {Random Search for Global Optimization},
     journal = jmlr,
     volume = {13},
     year = {2012},
     pages = {281-305},
-    keywords = {Hyper-Parameter Optimization},
+    keywords = {Global Optimization},
     domain   = {ML}
 }
 
@@ -181,7 +181,7 @@
     journal   = corr,
     volume    = {abs/1306.3476},
     year      = {2013},
-    keywords = {Hyper-Parameter Optimization},
+    keywords = {Global Optimization},
     domain   = {ML}
 }
 
@@ -190,8 +190,18 @@
     author = {J. Bergstra and D. Yamins and D. Cox},
     pages = {115-123},
     crossref = {icml13},
-    keywords = {Hyper-Parameter Optimization},
+    keywords = {Global Optimization},
     domain   = {ML}
+}
+
+@inproceedings{birattari-gecco02a,
+  author    = {M. Birattari and T. St{\"{u}}tzle and L. Paquete and K. Varrentrapp},
+  title     = {A Racing Algorithm for Configuring Metaheuristics},
+  booktitle = {Proceedings of the Genetic and Evolutionary Computation Conference (GECCO'02)},
+  pages     = {11-18},
+  crossref  = {gecco02},
+  keywords  = {Algorithm Configuration},
+  domain    = {TSP}
 }
 
 @Article{brochu-corr10a,
@@ -202,7 +212,7 @@
   volume    = {abs/1012.2599},
   journal   = corr,
   year      = {2010},
-  keywords = {Hyper-Parameter Optimization}
+  keywords = {Global Optimization}
 }
 
 @InProceedings{brochu-siggraph10a,
@@ -210,14 +220,14 @@
 	crossref = {siggraph10},
 	title    = {A {Bayesian} Interactive Optimization Approach to Procedural Animation Design},
 	pages     = {103-112},
-	keywords = {Hyper-Parameter Optimization}
+	keywords = {Global Optimization}
 }
 
 @InProceedings{calandra-lion14a,
   title    = {{B}ayesian gait optimization for bipedal locomotion},
   author   = {R. Calandra and N. Gopalan and A. Seyfarth and J. Peters and M. Deisenroth},
   crossref = {lion14},
-  keywords = {Hyper-Parameter Optimization},
+  keywords = {Global Optimization},
   domain   = {Robotic}
 }
 
@@ -226,8 +236,17 @@
     author	= {K. Eggensperger and M. Feurer and F. Hutter and J. Bergstra and J. Snoek and H. Hoos and K. Leyton-Brown},
     booktitle	= {NIPS Workshop on Bayesian Optimization in Theory and Practice},
     year	= {2013},
-    keywords = {Hyper-Parameter Optimization},
+    keywords = {Global Optimization},
     domain  = {ML}
+}
+
+@inproceedings{fawcett-mic13,
+  title		= {Analysing differences between algorithm configurations through ablation},
+  author    = {C. Fawcett and H. Hoos},
+  pages		= {123-132},
+  crossref	= {mic13},
+  keywords  = {Algorithm Analysis},
+  domain    = {SAT, Planning}
 }
 
 @InProceedings{gebser-lpnmr13a,
@@ -247,7 +266,7 @@
 	author = {Gomes, {T.A.F.} and Prudêncio, {R.B.C.} and Soares, C. and Rossi, A. and Carvalho, A.},
 	year = {2012},
 	pages = {3-12},
-    keywords = {Hyper-Parameter Optimization},
+    keywords = {Global Optimization},
     domain  = {ML}
 }
 
@@ -258,7 +277,7 @@
   volume  = {11},
   pages   = {2051-2055},
   year    = {2010},
-  keywords = {Hyper-Parameter Optimization}
+  keywords = {Global Optimization}
 }
 
 @InProceedings{guerra-icann08a,
@@ -266,7 +285,7 @@
 	title    = {Predicting the Performance of Learning Algorithms Using Support Vector Machines as Meta-regressors},
 	crossref = {icann08},
 	pages    = {523-532},
-	keywords = {Hyper-Parameter Optimization, Algorithm Configuration},
+	keywords = {Global Optimization, Algorithm Configuration},
 	domain = {ML}
 }
 
@@ -335,6 +354,15 @@
   domain = {SAT}
 }
 
+@inproceedings{hutter-icml14a,
+	author    = {F. Hutter and H. Hoos and K. Leyton-Brown},
+	title = {An Efficient Approach for Assessing Hyperparameter Importance},
+	pages = {754-762},
+	crossref = {icml14},
+	keywords = {Algorithm Analysis},
+	domain =  {ML, SAT, ASP, MIP}
+}
+
 @Article{hutter-jair09a,
   title =	 {Param{ILS}: An Automatic Algorithm Configuration Framework},
   author =	 {F. Hutter and H. Hoos and K. Leyton-Brown and T. St{\"u}tzle},
@@ -353,8 +381,26 @@
 	volume = {206},
 	pages = {79-111},
 	year = {2014},
-	keywords = {Algorithm Configuration},
+	keywords = {Algorithm Analysis},
 	domain = {SAT, TSP, MIP}
+}
+
+@InProceedings{hutter-lion13,
+	title	 = {Identifying Key Algorithm Parameters and Instance Features using Forward Selection},
+	author	 = {F. Hutter and H.~H. Hoos and K. Leyton-Brown},
+	pages    = {364-381},
+	crossref = {lion13},
+	keywords = {Algorithm Analysis},
+	domain   = {MIP, SAT, TSP}
+}
+
+@InProceedings{hutter-lion11a,
+    author    = {F. Hutter and H. Hoos and K. Leyton-Brown},
+    title     = {Sequential Model-Based Optimization for General Algorithm Configuration},
+    pages     = {507-523},
+    crossref  = {lion11},
+    keywords = {Algorithm Configuration},
+    domain   = {SAT, MIP}
 }
 
 @InProceedings{hutter-lion14a,
@@ -367,15 +413,6 @@
     domain = {SAT,ASP,ML,Planning,TSP}
 }
 
-@InProceedings{hutter-lion11a,
-    author    = {F. Hutter and H. Hoos and K. Leyton-Brown},
-    title     = {Sequential Model-Based Optimization for General Algorithm Configuration},
-    pages     = {507-523},
-    crossref  = {lion11},
-    keywords = {Algorithm Configuration},
-    domain   = {SAT, MIP}
-}
-
 @Article{jones-jgo98a,
     author = {D. Jones and M. Schonlau and W. Welch},
     title = {Efficient Global Optimization of Expensive Black Box Functions},
@@ -383,7 +420,7 @@
     year = {1998},
     volume = {13},
     pages = {455-492},
-    keywords = {Hyper-Parameter Optimization},
+    keywords = {Global Optimization},
     domain = {Hardware}
 }
 
@@ -394,7 +431,7 @@
     title   = {A Taxonomy of Global Optimization Methods Based on Response Surfaces},
     author  = {D.~R. Jones},
     pages   = {345-383},
-    keywords = {Hyper-Parameter Optimization}
+    keywords = {Global Optimization}
 }
 
 @inproceedings{kadioglu-ecai10,
@@ -412,8 +449,18 @@
 	author   = {B. Komer and J. Bergstra and C. Eliasmith},
 	title    = {Hyperopt-Sklearn: Automatic Hyperparameter Configuration for Scikit-Learn},
 	crossref = {automl2014},
-	keywords = {Hyper-Parameter Optimization},
+	keywords = {Global Optimization},
 	domain   = {ML}
+}
+
+@INPROCEEDINGS{lindauer-aaai15a,
+  AUTHOR =       {M. Lindauer and H. Hoos and F. Hutter and T. Schaub},
+  TITLE =        {AutoFolio: Algorithm Configuration for Algorithm Selection},
+  BOOKTITLE =    {Proceedings of the Twenty-Ninth AAAI Workshops on Artificial Intelligence},
+  CONFERENCE =   {Algorithm Configuration AAAI Workshop},
+  YEAR =         {2015},
+  keywords = 	 {Algorithm Configuration},
+  domain = 		 {Algorithm Selection}
 }
 
 @techreport{lopez-ibanez-tech11a,
@@ -424,15 +471,6 @@
   url = {http://iridia.ulb.ac.be/IridiaTrSeries/IridiaTr2011-004.pdf},
   keywords = {Algorithm Configuration},
   domain = {TSP}
-}
-
-@inproceedings{fitzgerald-aaai14a,
-  author    = {T. Fitzgerald and B. O'Sullivan and Y. Malitsky and K. Tierney},
-  title     = {Online Search Algorithm Configuration},
-  pages     = {3104-3105},
-  crossref  = {aaai14},
-  keywords = {Algorithm Configuration},
-  domain = {CATS}
 }
 
 @inproceedings{fitzgerald-socs14a,
@@ -471,7 +509,7 @@
 	author = {Reif, M. and Shafait, F. and Dengel, A.},
 	year = {2012},
 	pages = {357-380},
-	keywords = {Hyper-Parameter Optimization},
+	keywords = {Global Optimization},
 	domain = {ML}
 }
 
@@ -481,7 +519,7 @@
     crossref  = {icml10},
     pages     = {1015-1022},
     year      = {2010},
-    keywords  = {Hyper-Parameter Optimization},
+    keywords  = {Global Optimization},
     domain = {Sensor Data}
 }
 
@@ -490,7 +528,7 @@
 	title    = {Multi-Task Bayesian Optimization},
     crossref = {icml13},
     pages    = {2004-2012},
-    keywords = {Hyper-Parameter Optimization},
+    keywords = {Global Optimization},
     domain = {ML}
 }
 
@@ -499,7 +537,7 @@
   title     = {{A}uto-{WEKA}: combined selection and hyperparameter optimization of classification algorithms},
   pages     = {847-855},
   crossref  = {kdd13},
-  keywords = {Algorithm Configuration},
+  keywords = {Global Optimization},
   domain = {ML}
 }
 
@@ -517,7 +555,7 @@
     title    = {Input Warping for {Bayesian} Optimization of Non-stationary Functions},
     pages    = {1674–1682},
     crossref = {icml14},
-    keywords = {Hyper-Parameter Optimization},
+    keywords = {Global Optimization},
     domain = {ML}
 }
 
@@ -527,7 +565,7 @@
   pages     = {2960-2968},
   crossref  = {nips12},
   domain = {ML},
-  keywords = {Hyper-Parameter Optimization}
+  keywords = {Global Optimization}
 }
 
 @InProceedings{swersky-nips13a,
@@ -535,7 +573,7 @@
 	crossref = {nips13},
 	author   = {K. Swersky and J. Snoek and R. Adams},
 	pages = {2004-2012},
-	keywords = {Hyper-Parameter Optimization},
+	keywords = {Global Optimization},
 	domain = {ML}
 }
 
@@ -544,7 +582,7 @@
     author   = {M. Tesch and J. Schneider and H. Choset},
     crossref = {iros11},
     pages    = {1069-1074},
-    keywords = {Hyper-Parameter Optimization},
+    keywords = {Global Optimization},
     domain = {Robots}
 }
 
@@ -580,6 +618,6 @@
 	crossref  = {aistats2014},
 	author    = {D. Yogatama and G. Mann},
 	pages     = {1077--1085},
-	keywords = {Hyper-Parameter Optimization},
+	keywords = {Global Optimization},
 	domain = {ML}
 }

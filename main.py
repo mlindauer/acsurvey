@@ -6,7 +6,6 @@ Created on Oct 9, 2014
 @author: marius lindauer
 '''
 
-
 import os
 import sys
 import time
@@ -25,7 +24,7 @@ class BIBHTML(object):
         self.bibdata = None
         
         #self.ACTIVE_KEYS = ["Algorithm Configuration", "Algorithm Schedules", "Algorithm Selection", "Hyper-Parameter Optimization"]
-        self.ACTIVE_KEYS = ["Algorithm Configuration", "Hyper-Parameter Optimization", "Global Optimization"]
+        self.ACTIVE_KEYS = ["Algorithm Configuration", "Global Optimization", "Algorithm Analysis"]
             
     def main(self):
         self.read_bib()
@@ -43,6 +42,8 @@ class BIBHTML(object):
         for entry in self.bibdata.entries.values():
             if entry.fields.get("crossref"):
                 cross_ref = entry.get_crossref()
+                if not cross_ref.fields.get("booktitle"):
+                    sys.stderr.write("[WARNING] Missing booktitle at %s\n" %(cross_ref))
                 for key, value in cross_ref.fields.items():
                     if key == "title":
                         continue
@@ -61,24 +62,26 @@ class BIBHTML(object):
         lit_list = [] 
                    
         for entry in entry_list:
-            if entry.original_type == "Proceedings":
+            if entry.original_type.upper() == "PROCEEDINGS":
                 continue
             
             active = False
                 
             if entry.fields.get("keywords") and entry.fields.get("keywords") != "":
-                keys = map(lambda x: x.strip(" "), entry.fields.get("keywords").split(","))
+                keys = sorted(map(lambda x: x.strip(" "), entry.fields.get("keywords").split(",")))
                 for k in keys:
                     if k in self.ACTIVE_KEYS:
                         active = True
+                        entry.fields["keywords"] = ", ".join(keys)
                         break
             if not active:
+                sys.stderr.write("[WARNING]: Skipped: %s" %(entry.fields.get("title")))
                 continue     
                 
-            list_entry = {"year":1900, "citation":{"short": "NA", "long": "NA"}, "domain": "NA", "topic": "NA"}
+            list_entry = {"Year":1900, "Citation":{"short": "NA", "long": "NA"}, "Domain": "N/A", "Category": "N/A"}
                 
                 
-            key_order = [("author", "%s.<br/>"), ("title", "%s.<br/>"), 
+            key_order = [("author", "%s<br/>"), ("title", "%s.<br/>"), 
                              ("booktitle", "%s.<br/>"), ("journal", "%s.<br/>"), 
                              ("pages", "p. %s. "), ("year", "%s.<br/>")]
                 
@@ -86,16 +89,17 @@ class BIBHTML(object):
             for k,form in key_order:
                 if entry.fields.get(k) and entry.fields.get(k) != "":
                     long_array.append(form %(self.format_string(entry.fields.get(k))))
-            list_entry["citation"]["long"] = "".join(long_array)
-            print(self.format_string(entry.fields.get("author")))
-            list_entry["citation"]["short"] = self.format_string(entry.fields.get("author"))+" ".encode("utf-8")+self.format_string(entry.fields.get("year"))
+            list_entry["Citation"]["long"] = "".join(long_array)
+            #print(self.format_string(entry.fields.get("author")))
+            list_entry["Citation"]["short"] = self.format_string(entry.fields.get("author"))+" ".encode("utf-8") \
+                                              + self.format_string(entry.fields.get("year"))
             
             if entry.fields.get("year") and entry.fields.get("year") != "":
-                list_entry["year"] = entry.fields.get("year")
+                list_entry["Year"] = entry.fields.get("year")
             if entry.fields.get("domain") and entry.fields.get("domain") != "":
-                list_entry["domain"] = entry.fields.get("domain")
+                list_entry["Domain"] = ", ".join(sorted(map(lambda x: x.strip(), entry.fields.get("domain").split(","))))
             if entry.fields.get("keywords") and entry.fields.get("keywords") != "":
-                list_entry["topic"] = entry.fields.get("keywords")
+                list_entry["Category"] = entry.fields.get("keywords")
                 
             lit_list.append(list_entry)
         
@@ -114,6 +118,7 @@ class BIBHTML(object):
                     ("\\'a", "á"),
                     ("\\'e", "é"),
                     ("\\^e", "ê"),
+                    ("\\'c", "ć"),
                     ("~", ""),
                     ("\\" , ""),
                     ("\"", ""),
