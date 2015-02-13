@@ -19,7 +19,7 @@ class BIBHTML(object):
         '''
             constructor
         '''
-        self._BIBFILES = ["./bib/lib.bib", "./bib/proc.bib"] 
+        self._BIBFILES = ["./bib/strings.bib", "./bib/lib.bib", "./bib/proc.bib"] 
         #self._BIBFILES = ["/home/lindauer/workspace/acsurvey/bib/lib.bib", "/home/lindauer/workspace/acsurvey/bib/proc.bib"] 
         self.bibdata = None
         
